@@ -1,0 +1,37 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Currency Service API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/currency": {
+      "get": {
+        "summary": "Get currency rate",
+        "parameters": [
+          {
+            "name": "valute",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Currency rate"
+          },
+          "404": {
+            "description": "Rate not found"
+          }
+        }
+      }
+    }
+  }
+}
